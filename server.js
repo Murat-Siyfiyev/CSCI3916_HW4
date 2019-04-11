@@ -144,24 +144,24 @@ router.route('/Comments')
         var movie = req.body.movieName;
         Movie.find(movie, function (err, movieReviews) {
             if(err){
-                res.json({msg: "The is not a movie with this name in the database.\n"});
+                res.json({msg: "no such a movie in the file.\n"});
             }
             if(movieReviews)
             {
                 console.log(req.body);
                 var comments = new Comment();
-                comments.title = req.body.movie;
+                comments.title = req.body.title;
                 comments.comment = req.body.review;
                 comments.user = req.body.user;
                 comments.rate = req.body.rating;
                 comments.save(function (err) {
                     if (err) {
                         if (err.Code == 11000)
-                            return res.JSON({success: false, message: 'You have already commented on this movie!'});
+                            return res.JSON({success: false, message: 'You have already reviewed this movie try again'});
                         else
                             return res.send(err);
                     }
-                    res.json({success: true, message: 'You comment was successfully saved!'})
+                    res.json({success: true, message: 'You review has been saved.'})
                 });
             }
         });
@@ -169,6 +169,7 @@ router.route('/Comments')
 router.route('/MoviesandComment')
     .get(authJwtController.isAuthenticated, function (req, res) {
         var data = req.body;
+
         Movie.aggregate([
             {"$match": {"title": data.title}
             },
@@ -207,7 +208,7 @@ router.post('/signin', function(req, res) {
                 var token = jwt.sign(userToken, process.env.SECRET_KEY);
                 res.json({success: true, token: 'JWT ' + token});
             } else {
-                res.status(401).send({success: false, msg: 'Authentication failed. Wrong password.'});
+                res.status(401).send({success: false, msg: 'Authentication has failed Wrong password try again.'});
             }
         });
     });
