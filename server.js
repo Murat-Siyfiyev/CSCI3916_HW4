@@ -178,7 +178,7 @@ router.route('/MoviesandComment')
                     {
                         from : 'comments',
                         localField: 'title',
-                        foreignField: '_id',
+                        foreignField: 'title',
                         as: 'reviews'
                     },
             },
