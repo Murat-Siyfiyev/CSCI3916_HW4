@@ -141,7 +141,7 @@ router.route('/Movies')
 
 router.route('/Comments')
     .post(authJwtController.isAuthenticated, function (req, res) {
-        var movie = req.body.movieName;
+        var movie = req.body.movie;
         Movie.find(movie, function (err, movieReviews) {
             if(err){
                 res.json({msg: "no such a movie in the file.\n"});
