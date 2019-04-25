@@ -173,6 +173,8 @@ router.route('/Movies')
         if (req.query.reviews === "true"){
             console.log("getting movies with reviews");
             Movie.aggregate([
+                {"$match": {"title": data.title}
+                },
                 {
                 $lookup: {
                     from: "comments",
