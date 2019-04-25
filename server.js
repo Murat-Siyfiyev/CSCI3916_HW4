@@ -177,9 +177,8 @@ router.route('/Movies')
                 $lookup: {
                     from: "reviews",
                     localField: "title",
-                    foreignField: "movietitle",
+                    foreignField: "title",
                     as : 'reviews'
-
             }
         }
         ], function (err, result) {
@@ -190,12 +189,12 @@ router.route('/Movies')
                     console.log("no such movie")
                 }
             });
-} else{
-        console.log("getting movies with no reviews please wait")
-    Movie.find(function (err, movies){
-        if (err) res.send(err);
-        res.json(movies);
-    });
+        } else{
+            console.log("getting movies with no reviews please wait")
+            Movie.find(function(err, movies){
+                if (err) res.send(err);
+                res.json(movies);
+            });
 
 }
 })
