@@ -170,7 +170,7 @@ router.route('/Comments')
 router.route('/Movies')
     .get (authJwtController.isAuthenticated, function (req,res){
         console.log ("getting movies and reviews please wait");
-        if (req.query.reviews ===" true"){
+        if (req.query.reviews === "true"){
             console.log("getting movies with reviews");
             Movie.aggregate([
                 {
