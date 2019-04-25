@@ -166,6 +166,38 @@ router.route('/Comments')
             }
         });
     });
+
+router.route('/moves')
+    .get (authJwtController.isAuthenticated, function (req,res){
+        console.log ("getting movies and reviews please wait");
+        if (req.query.reviews ===" true"){
+            console.log("getting movies with reviews");
+            Movie.aggregate([
+                {
+                $lookup: {
+                    from: "reviews",
+                    localField: "title",
+                    foreignField: "movietitle",
+                    as : 'reviews'
+
+            }
+        }
+        ], function (err, result) {
+            if (err) {
+                res.send(err);
+            }
+            else res.send(result);
+        });
+} else{
+        console.log("getting movies with no reviews please wait")
+    Movie.find(function (err, movies){
+        if (err) res.send(err);
+        res.json(movies);
+    });
+
+}
+})
+
 router.route('/MoviesandComment')
     .get(authJwtController.isAuthenticated, function (req, res) {
         var data = req.body;
