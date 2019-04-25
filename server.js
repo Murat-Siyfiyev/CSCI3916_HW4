@@ -191,7 +191,7 @@ router.route('/Movies')
             });
         } else{
             console.log("getting movies with no reviews please wait")
-            Movie.find(function(err, movies){
+            Movie.find(req.query, (err, movies)=>{
                 if (err) res.send(err);
                 res.json(movies);
             });
