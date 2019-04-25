@@ -167,7 +167,7 @@ router.route('/Comments')
         });
     });
 
-router.route('/moves')
+router.route('/Movies')
     .get (authJwtController.isAuthenticated, function (req,res){
         console.log ("getting movies and reviews please wait");
         if (req.query.reviews ===" true"){
@@ -183,11 +183,13 @@ router.route('/moves')
             }
         }
         ], function (err, result) {
-            if (err) {
-                res.send(err);
-            }
-            else res.send(result);
-        });
+                if (!err) {
+                    res.send(result);
+                } else {
+                    res.send(err);
+                    console.log("no such movie")
+                }
+            });
 } else{
         console.log("getting movies with no reviews please wait")
     Movie.find(function (err, movies){
