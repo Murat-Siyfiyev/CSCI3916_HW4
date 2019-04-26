@@ -201,32 +201,7 @@ router.route('/Movies')
 }
 })
 
-router.route('/MoviesandComment')
-    .get(authJwtController.isAuthenticated, function (req, res) {
-        var data = req.body;
 
-        Movie.aggregate([
-            {"$match": {"title": data.title}
-            },
-            {
-                $lookup:
-                    {
-                        from : 'comments',
-                        localField: 'title',
-                        foreignField: 'title',
-                        as: 'reviews'
-                    },
-            },
-        ]).exec((err, review)=> {
-            if(err){
-                res.status('500').send(err);
-            }
-            else
-            {
-                res.json(review)
-            }
-        });
-    });
 
 router.post('/signin', function(req, res) {
     var userNew = new User();
