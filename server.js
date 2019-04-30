@@ -100,7 +100,7 @@ router.route('/Movies/:id')
                 if (!mov) {
                     return res.status(404).end();
                 }
-                return res.status(200).json({msg: "Movie updated"})
+                return res.status(200).json({msg: "Movie has been updated"})
             })
             .catch(err => next(err))
     });
@@ -114,10 +114,10 @@ router.route('/Movies')
             }
             else if(movie == null)
             {
-                res.json({msg : "Movie not found"})
+                res.json({msg : "Movie not found in database"})
             }
             else
-                res.json({msg :"The movie was deleted"})
+                res.json({msg :"The movie has been deleted"})
         })
     });
 router.route('/Movies')
@@ -170,7 +170,7 @@ router.route('/Comments')
 router.route('/Movies')
     .get (authJwtController.isAuthenticated, function (req,res){
         console.log ("getting movies and reviews please wait");
-        if (req.query.reviews === "true"){
+        if (req.query.reviews === true){
             console.log("getting movies with reviews");
             Movie.aggregate([
                 {"$match": {"title": data.title}
@@ -188,7 +188,7 @@ router.route('/Movies')
                     res.send(result);
                 } else {
                     res.send(err);
-                    console.log("no such movie")
+                    console.log("no such movie in file please try again")
                 }
             });
         } else{
