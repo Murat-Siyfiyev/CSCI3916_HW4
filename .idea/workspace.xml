@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d65ce08-2fc2-445f-b5f4-58f4931382b4" name="Default Changelist" comment="Fixed lookup 2">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -47,8 +43,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="197" column="20" lean-forward="true" selection-start-line="197" selection-start-column="20" selection-end-line="197" selection-end-column="20" />
+            <state relative-caret-position="-1473">
+              <caret line="77" column="7" selection-start-line="77" selection-start-column="7" selection-end-line="77" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -67,7 +63,7 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="30">
-                <caret line="2" column="116" selection-start-line="2" selection-start-column="116" selection-end-line="2" selection-end-column="116" />
+                <caret line="2" column="901" selection-start-line="2" selection-start-column="901" selection-end-line="2" selection-end-column="901" />
               </first_editor>
               <second_editor />
             </state>
@@ -191,7 +187,7 @@
       <workItem from="1554946955001" duration="10377000" />
       <workItem from="1556213786576" duration="1761000" />
       <workItem from="1556225716261" duration="2398000" />
-      <workItem from="1556642137783" duration="4534000" />
+      <workItem from="1556642137783" duration="4785000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed lookup">
       <created>1555017894170</created>
@@ -211,7 +207,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19619000" />
+    <option name="totallyTimeSpent" value="19870000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="792" extended-state="0" />
@@ -294,8 +290,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="197" column="20" lean-forward="true" selection-start-line="197" selection-start-column="20" selection-end-line="197" selection-end-column="20" />
+        <state relative-caret-position="-1473">
+          <caret line="77" column="7" selection-start-line="77" selection-start-column="7" selection-end-line="77" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -303,7 +299,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="30">
-            <caret line="2" column="116" selection-start-line="2" selection-start-column="116" selection-end-line="2" selection-end-column="116" />
+            <caret line="2" column="901" selection-start-line="2" selection-start-column="901" selection-end-line="2" selection-end-column="901" />
           </first_editor>
           <second_editor />
         </state>
