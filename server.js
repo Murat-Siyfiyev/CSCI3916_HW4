@@ -176,14 +176,14 @@ router.route('/Movies')
                 {"$match": {"title": data.title}
                 },
                 {
-                $lookup: {
-                    from: "comments",
-                    localField: "title",
-                    foreignField: "title",
-                    as : 'reviews'
-            }
-        }
-        ], function (err, result) {
+                    $lookup: {
+                        from: "comments",
+                        localField: "title",
+                        foreignField: "title",
+                        as : 'reviews'
+                    }
+                }
+            ], function (err, result) {
                 if (!err) {
                     res.send(result);
                 } else {
@@ -198,9 +198,8 @@ router.route('/Movies')
                 res.json(movies);
             });
 
-}
-})
-
+        }
+    })
 
 
 router.post('/signin', function(req, res) {
