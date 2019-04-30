@@ -77,14 +77,6 @@ router.route('/Movies/:moviesid')
         })
     });
 
-router.route('/Movies')
-    .get(authJwtController.isAuthenticated, function (req, res) {
-        Movie.findOne({title : req.body.title}, function (err, movies) {
-            if (err) res.send(err);
-            res.json(movies);
-        })
-    });
-
 router.route('/MoviesAll')
     .get(authJwtController.isAuthenticated, function (req, res) {
         Movie.find(function (err, movies) {
@@ -168,38 +160,39 @@ router.route('/Comments')
     });
 
 router.route('/Movies')
-    .get (authJwtController.isAuthenticated, function (req,res){
-        console.log ("getting movies and reviews please wait");
-        if (req.query.reviews === true){
-            console.log("getting movies with reviews");
-            Movie.aggregate([
-                {"$match": {"title": data.title}
-                },
-                {
-                    $lookup: {
-                        from: "comments",
-                        localField: "title",
-                        foreignField: "title",
-                        as : 'reviews'
-                    }
-                }
-            ], function (err, result) {
-                if (!err) {
-                    res.send(result);
-                } else {
-                    res.send(err);
-                    console.log("no such movie in file please try again")
-                }
-            });
-        } else{
-            console.log("getting movies with no reviews please wait")
-            Movie.find(req.query, (err, movies)=>{
-                if (err) res.send(err);
-                res.json(movies);
-            });
-
-        }
-    })
+.get(authJwtController.isAuthenticated, function (req, res) {
+    let data = req.body;
+    if (req.query.reviews === 'true') {
+        Movie.aggregate([
+            {
+                "$match": {"title": data.title}
+            },
+            {
+                $lookup:
+                    {
+                        from: 'comments',
+                        localField: 'title',
+                        foreignField: 'title',
+                        as: 'reviews'
+                    },
+            },
+        ]).exec((err, review) => {
+            if (err) {
+                res.status('500').send(err);
+            } else {
+                res.json(review)
+            }
+        });
+    } else {
+        Movie.find(function (err, movies) {
+            if (err) {
+                res.send(err);
+            } else {
+                res.json(movies)
+            }
+        })
+    }
+})
 
 
 router.post('/signin', function(req, res) {
@@ -226,4 +219,4 @@ router.post('/signin', function(req, res) {
     });
 });
 app.use('/', router);
-app.listen(process.env.PORT || 8000);
+app.listen(process.env.PORT || 9090);
