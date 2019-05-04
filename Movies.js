@@ -15,12 +15,6 @@ var MoviesSchema = new Schema({
         index: {unique: true}
     },
 
-    review:
-        {
-            type:string,
-            required: true,
-            index: {unique: true}
-        },
 
     YearRelease:
         {
