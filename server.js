@@ -182,6 +182,7 @@ router.route('/Comments')
                 comments.comment = req.body.review;
                 comments.user = req.body.user;
                 comments.rate = req.body.rating;
+
                 comments.save(function (err) {
                     if (err) {
                         if (err.Code == 11000)

@@ -14,10 +14,18 @@ var MoviesSchema = new Schema({
         required: true,
         index: {unique: true}
     },
+
     YearRelease:
         {
             type: Number,
             required: true,
+        },
+
+    review:
+        {
+            type:string,
+            required: true,
+            index: {unique: true}
         },
     genre: {type: String,
             enum: ['Action', 'Adventure', 'Comedy', 'Drama', 'Fantasy', 'Horror', 'Mystery', 'Thriller', 'Western', 'Fiction'],
