@@ -154,6 +154,8 @@ router.route('/Movies')
         movies.YearRelease = req.body.YearRelease;
         movies.genre = req.body.genre;
         movies.Actors = req.body.Actors;
+        movies.imagelink=req.body.imagelink;
+        movies.averagerating=req/averagerating;
         movies.save(function (err) {
             if (err) {
                 if (err.Code == 11000)

@@ -28,6 +28,14 @@ var MoviesSchema = new Schema({
             type: Array,
             required: true,
         },
+    imagelink:{
+        type: String,
+        required: true,
+    },
+    averagerating: {
+        type: Number,
+        required: false
+    }
 });
 // return the model
 module.exports = mongoose.model('Movies', MoviesSchema);
