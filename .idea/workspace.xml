@@ -225,7 +225,7 @@
       <workItem from="1556940375531" duration="1274000" />
       <workItem from="1556941858293" duration="909000" />
       <workItem from="1556943631074" duration="3955000" />
-      <workItem from="1556984638968" duration="622000" />
+      <workItem from="1556984638968" duration="653000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed lookup">
       <created>1555017894170</created>
@@ -245,10 +245,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28514000" />
+    <option name="totallyTimeSpent" value="28545000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="437" y="23" width="949" height="792" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20581897" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
