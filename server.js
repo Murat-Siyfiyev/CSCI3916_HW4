@@ -1,4 +1,7 @@
-var express = require('express');
+let express = require('express');
+let cors = require('cors');
+let app = express();
+app.use(cors());
 var bodyParser = require('body-parser');
 var passport = require('passport');
 var authJwtController = require('./auth_jwt');
@@ -8,8 +11,8 @@ var Movie = require('./Movies');
 var Comment = require('./Comments');
 mongodb = require('mongodb');
 ObjectId = mongodb.ObjectId;
-var app = express();
-module.exports = app; // for testing
+
+module.exports = app;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(passport.initialize());
@@ -40,7 +43,6 @@ router.route('/users')
     .get(authJwtController.isAuthenticated, function (req, res) {
         User.find(function (err, users) {
             if (err) res.send(err);
-            // return the users
             res.json(users);
         });
     });
@@ -54,10 +56,10 @@ router.post('/signup', function(req, res) {
         user.name = req.body.name;
         user.username = req.body.username;
         user.password = req.body.password;
-        // save the user
+
         user.save(function(err) {
             if (err) {
-                // duplicate entry
+
                 if (err.code == 11000)
                     return res.json({ success: false, message: 'A user with that username already exists. '});
                 else
@@ -67,6 +69,38 @@ router.post('/signup', function(req, res) {
         });
     }
 });
+
+app.route('/movie')
+    .get(authJwtController.isAuthenticated, function (req, res) {
+        Movie.find(function (err, movie) {
+            if(err) res.json({message: "wrong input not working", error: err});
+            if (req.query.reviews === 'true'){
+                Movie.aggregate([
+                    {
+                        $lookup:{
+                            from: 'comments',
+                            localField: 'title',
+                            foreignField: 'title',
+                            as: 'Reviews'
+                        }
+                    },
+                    {
+                        $sort : { averageRating : -1} }
+
+                ],function(err, data) {
+
+                    if(err){
+                        res.send(err);
+                    }else{
+                        res.json(data);
+                    }
+                });
+            } else {
+                res.json(movie);
+            }
+        })
+    });
+
 router.route('/Movies/:moviesid')
     .get(authJwtController.isAuthenticated, function (req, res) {
         var id = req.params.moviesid;
@@ -158,7 +192,43 @@ router.route('/Comments')
             }
         });
     });
+app.route('/movie/:movieid')
+    .get(authJwtController.isAuthenticated, function (req, res) {
+        var id = req.params.movieid;
+        Movie.findById(id, function (err, movie) {
+            if (err) {
+                res.json({message: "Movie not found"});
+            }
+            else {
+                if (req.query.reviews === 'true'){
 
+                    Movie.aggregate([
+                        {
+                            $match: {'title': req.query.title}
+                        },
+
+                        {
+                            $lookup:{
+                                from: 'comments',
+                                localField: 'title',
+                                foreignField: 'title',
+                                as: 'Reviews'
+                            }
+                        }
+                    ],function(err, data) {
+
+                        if(err){
+                            res.send(err);
+                        }else{
+                            res.json(data);
+                        }
+                    });
+                } else {
+                    res.json(movie);
+                }
+            }
+        })
+    });
 router.route('/Movies')
 .get(authJwtController.isAuthenticated, function (req, res) {
     let data = req.body;
