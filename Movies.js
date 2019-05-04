@@ -30,7 +30,7 @@ var MoviesSchema = new Schema({
             type: Array,
             required: true,
         },
-    imagelink:{
+    ImageUrl:{
         type: String,
         required: true,
     },
