@@ -131,7 +131,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="290" />
     <option name="y" value="34" />
     <option name="width" value="949" />
@@ -223,7 +223,7 @@
       <workItem from="1556937567032" duration="817000" />
       <workItem from="1556940375531" duration="1274000" />
       <workItem from="1556941858293" duration="909000" />
-      <workItem from="1556943631074" duration="2460000" />
+      <workItem from="1556943631074" duration="2626000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed lookup">
       <created>1555017894170</created>
@@ -243,10 +243,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26397000" />
+    <option name="totallyTimeSpent" value="26563000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="290" y="34" width="949" height="792" extended-state="0" />
+    <frame x="290" y="34" width="949" height="792" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.13460183" />
