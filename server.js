@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(passport.initialize());
 var router = express.Router();
-router.route('/postjwt')
+app.route('/postjwt')
     .post(authJwtController.isAuthenticated, function (req, res) {
         console.log(req.body);
         res = res.status(200);
@@ -28,7 +28,7 @@ router.route('/postjwt')
         res.send(req.body);
     });
 
-router.route('/users/:userId')
+app.route('/users/:userId')
     .get(authJwtController.isAuthenticated, function (req, res) {
         var id = req.params.userId;
         User.findById(id, function(err, user) {
@@ -39,7 +39,7 @@ router.route('/users/:userId')
         });
     });
 
-router.route('/users')
+app.route('/users')
     .get(authJwtController.isAuthenticated, function (req, res) {
         User.find(function (err, users) {
             if (err) res.send(err);
@@ -47,7 +47,7 @@ router.route('/users')
         });
     });
 
-router.post('/signup', function(req, res) {
+app.post('/signup', function(req, res) {
     if (!req.body.username || !req.body.password) {
         res.json({success: false, msg: 'Please pass username and password.'});
     }
@@ -101,7 +101,7 @@ app.route('/movie')
         })
     });
 
-router.route('/Movies/:moviesid')
+app.route('/Movies/:moviesid')
     .get(authJwtController.isAuthenticated, function (req, res) {
         var id = req.params.moviesid;
         Movie.findById(id, function (err, movie) {
@@ -111,14 +111,14 @@ router.route('/Movies/:moviesid')
         })
     });
 
-router.route('/MoviesAll')
+app.route('/MoviesAll')
     .get(authJwtController.isAuthenticated, function (req, res) {
         Movie.find(function (err, movies) {
             if(err) res.send(err);
             res.json(movies);
         })
     });
-router.route('/Movies/:id')
+app.route('/Movies/:id')
     .put(authJwtController.isAuthenticated, function (req, res) {
         var conditions = {_id: req.params.id};
         Movie.updateOne(conditions, req.body)
@@ -131,7 +131,7 @@ router.route('/Movies/:id')
             .catch(err => next(err))
     });
 
-router.route('/Movies')
+app.route('/Movies')
     .delete(authJwtController.isAuthenticated, function (req, res){
         Movie.findOneAndDelete({title: req.body.title}, function (err, movie) {
             if (err)
@@ -146,7 +146,7 @@ router.route('/Movies')
                 res.json({msg :"The movie has been deleted"})
         })
     });
-router.route('/Movies')
+app.route('/Movies')
     .post(authJwtController.isAuthenticated, function (req, res) {
         console.log(req.body);
         var movies = new Movie();
@@ -167,7 +167,7 @@ router.route('/Movies')
         });
     });
 
-router.route('/Comments')
+app.route('/Comments')
     .post(authJwtController.isAuthenticated, function (req, res) {
         var movie = req.body.movie;
         Movie.find(movie, function (err, movieReviews) {
@@ -232,7 +232,7 @@ app.route('/movie/:movieid')
             }
         })
     });
-router.route('/Movies')
+app.route('/Movies')
 .get(authJwtController.isAuthenticated, function (req, res) {
     let data = req.body;
     if (req.query.reviews === 'true') {
@@ -268,7 +268,7 @@ router.route('/Movies')
 })
 
 
-router.post('/signin', function(req, res) {
+app.post('/signin', function(req, res) {
     var userNew = new User();
     userNew.name = req.body.name;
     userNew.username = req.body.username;
