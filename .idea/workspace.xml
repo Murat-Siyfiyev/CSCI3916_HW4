@@ -31,10 +31,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
+            <state relative-caret-position="-69">
               <caret line="199" column="35" lean-forward="true" selection-start-line="199" selection-start-column="28" selection-end-line="199" selection-end-column="35" />
             </state>
           </provider>
@@ -58,7 +58,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
@@ -143,7 +143,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="399" />
     <option name="y" value="42" />
     <option name="width" value="949" />
@@ -251,7 +251,7 @@
       <workItem from="1556943631074" duration="3955000" />
       <workItem from="1556984638968" duration="1133000" />
       <workItem from="1556990292359" duration="2380000" />
-      <workItem from="1557167430683" duration="4962000" />
+      <workItem from="1557167430683" duration="5170000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed lookup">
       <created>1555017894170</created>
@@ -271,12 +271,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36367000" />
+    <option name="totallyTimeSpent" value="36575000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="399" y="42" width="949" height="792" extended-state="1" />
+    <frame x="399" y="42" width="949" height="792" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4972826" visible="true" weight="0.20581897" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4972826" visible="true" weight="0.20581897" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" sideWeight="0.5027174" side_tool="true" visible="true" weight="0.20581897" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -290,7 +291,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50039715" side_tool="true" weight="0.32884902" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4988086" visible="true" weight="0.4619883" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4988086" visible="true" weight="0.4619883" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -397,13 +398,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="199" column="35" lean-forward="true" selection-start-line="199" selection-start-column="28" selection-end-line="199" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -411,6 +405,13 @@
             <caret line="2" column="1281" selection-start-line="2" selection-start-column="1281" selection-end-line="2" selection-end-column="1281" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-69">
+          <caret line="199" column="35" lean-forward="true" selection-start-line="199" selection-start-column="28" selection-end-line="199" selection-end-column="35" />
         </state>
       </provider>
     </entry>
