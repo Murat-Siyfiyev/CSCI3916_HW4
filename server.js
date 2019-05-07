@@ -155,7 +155,7 @@ app.route('/Movies')
         movies.genre = req.body.genre;
         movies.Actors = req.body.Actors;
         movies.ImageURL=req.body.Image;
-        movies.averagerating=req.body.averagerating;
+        movies.averagerating=req.body.avgrating;
         movies.save(function (err) {
             if (err) {
                 if (err.Code == 11000)

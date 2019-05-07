@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6d65ce08-2fc2-445f-b5f4-58f4931382b4" name="Default Changelist" comment="Fixed lookup 2" />
+    <list default="true" id="6d65ce08-2fc2-445f-b5f4-58f4931382b4" name="Default Changelist" comment="Fixed lookup 2">
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -34,8 +36,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="83" column="33" lean-forward="true" selection-start-line="83" selection-start-column="33" selection-end-line="83" selection-end-column="40" />
+            <state relative-caret-position="220">
+              <caret line="157" column="38" lean-forward="true" selection-start-line="157" selection-start-column="38" selection-end-line="157" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -138,12 +140,12 @@
         <option value="$PROJECT_DIR$/Comments.js" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/Movies.js" />
-        <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/server.js" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="399" />
     <option name="y" value="42" />
     <option name="width" value="949" />
@@ -251,7 +253,7 @@
       <workItem from="1556943631074" duration="3955000" />
       <workItem from="1556984638968" duration="1133000" />
       <workItem from="1556990292359" duration="2380000" />
-      <workItem from="1557167430683" duration="6244000" />
+      <workItem from="1557167430683" duration="6415000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed lookup">
       <created>1555017894170</created>
@@ -271,11 +273,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37649000" />
+    <option name="totallyTimeSpent" value="37820000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="399" y="42" width="949" height="792" extended-state="1" />
-    <editor active="true" />
+    <frame x="399" y="42" width="949" height="792" extended-state="0" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4972826" visible="true" weight="0.20581897" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -410,8 +411,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="83" column="33" lean-forward="true" selection-start-line="83" selection-start-column="33" selection-end-line="83" selection-end-column="40" />
+        <state relative-caret-position="220">
+          <caret line="157" column="38" lean-forward="true" selection-start-line="157" selection-start-column="38" selection-end-line="157" selection-end-column="47" />
         </state>
       </provider>
     </entry>
